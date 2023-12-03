@@ -8,7 +8,7 @@ import vi from '../../img/vi.svg';
 
 function Navigation() {
   return (
-    <div className="h-screen flex flex-col justify-between border-r-4 border-gray-100 p-0 w-48 ml-2 mb-2">
+    <div className="h-screen flex flex-col justify-between border-r-4 border-gray-100 p-0 w-1/5 ml-2 mb-2">
       <div className="">
         <img src={logo} alt="logoImg" className="w-36 mb-3" />
         <ul className="flex flex-col gap-0 ">
