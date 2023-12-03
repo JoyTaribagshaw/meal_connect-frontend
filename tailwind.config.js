@@ -9,6 +9,9 @@ module.exports = {
         green: '#72b600',
         orange: '#fe6814',
       },
+      fontSize: {
+        xxs: '.5rem',
+      },
     },
   },
   plugins: [],
