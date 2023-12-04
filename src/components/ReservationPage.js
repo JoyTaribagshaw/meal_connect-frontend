@@ -7,4 +7,11 @@ import pint from '../img/pint.svg';
 import gp from '../img/gp.svg';
 import vi from '../img/vi.svg';
 
-
+const ReservationPage = () => {
+    const reservations = [
+      {
+        id: 1,
+        title: 'Meal 1',
+        image: meal1,
+      },
+    ];
