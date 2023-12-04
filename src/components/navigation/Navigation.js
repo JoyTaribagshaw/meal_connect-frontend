@@ -1,4 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { userLoggedOut } from '../../features/login/loginSlice';
 import logo from '../../img/logo1.png';
 import tw from '../../img/tw.svg';
 import fb from '../../img/fb.svg';
@@ -7,6 +10,14 @@ import gp from '../../img/gp.svg';
 import vi from '../../img/vi.svg';
 
 function Navigation() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(userLoggedOut());
+    navigate('/login');
+  };
+
   return (
     <div className="h-screen flex flex-col justify-between border-r-4 border-gray-100 p-0 w-1/5 ml-2 mb-2">
       <div className="">
@@ -17,6 +28,11 @@ function Navigation() {
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><a href="#new" className="">My Reservation</a></li>
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><a href="#new" className="">Add meal</a></li>
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><a href="#new" className="">Delete meal</a></li>
+          <li className="w-full hover:bg-green active:bg-green hover:text-white p-2">
+            <button type="button" onClick={handleLogout} className="cursor-pointer">
+              Logout
+            </button>
+          </li>
         </ul>
       </div>
       <div>

@@ -18,36 +18,43 @@ import meal7 from '../../img/meals/meal7.jpg';
 
 const data = [
   {
+    id: 1,
     name: 'Meal One',
     img: meal1,
     description: 'Some description goes here, a logn description.',
   },
   {
+    id: 2,
     name: 'Meal Two',
     img: meal2,
     description: 'Some description goes here, a logn description.',
   },
   {
+    id: 3,
     name: 'Meal Three',
     img: meal3,
     description: 'Some description goes here, a logn description.',
   },
   {
+    id: 4,
     name: 'Meal Four',
     img: meal4,
     description: 'Some description goes here, a logn description.',
   },
   {
+    id: 6,
     name: 'Meal Five',
     img: meal5,
     description: 'Some description goes here, a logn description.',
   },
   {
+    id: 7,
     name: 'Meal Six',
     img: meal6,
     description: 'Some description goes here, a logn description.',
   },
   {
+    id: 8,
     name: 'Meal Seven',
     img: meal7,
     description: 'Some description goes here, a logn description.',
@@ -122,7 +129,7 @@ function MealSlider() {
         <Slider {...settings}>
           {data.map((d) => (
             <div key={d.id} className="meal-card flex items-center justify-center text-center">
-              <div>
+              <div className="flex justify-items-center align-items-center">
                 <img src={d.img} alt="meal1" className="m-auto p-auto w-64 rounded-full hover:cursor-pointer" />
               </div>
               <div className="text-center my-6">
