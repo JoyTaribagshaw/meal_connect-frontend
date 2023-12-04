@@ -5,12 +5,13 @@ const AddMeal = () => {
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [photo, setPhoto] = useState('');
+  const [available, setAvailability] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     console.log({
-      name, description, price, photo,
+      name, description, price, photo, available
     });
   };
 
@@ -56,6 +57,15 @@ const AddMeal = () => {
             onChange={(e) => setPhoto(e.target.value)}
           />
         </div>
+        <div className="mb-4">
+          <input
+            className="w-full px-3 py-5 border rounded-md focus:outline-none focus:border-blue-500"
+            type="text"
+            id="available"
+            placeholder="Availability: True or False"
+            onChange={(e) => setAvailability(e.target.value)}
+          />
+          </div>
         <button
           className="bg-green text-white py-2 px-10 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"
           type="submit"
