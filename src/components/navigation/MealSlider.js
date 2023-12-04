@@ -123,7 +123,7 @@ function MealSlider() {
           {data.map((d) => (
             <div key={d.id} className="meal-card flex items-center justify-center text-center">
               <div>
-                <img src={d.img} alt="meal1" className="m-0 p-0 w-64 rounded-full hover:cursor-pointer" />
+                <img src={d.img} alt="meal1" className="m-auto p-auto w-64 rounded-full hover:cursor-pointer" />
               </div>
               <div className="text-center my-6">
                 <p className="font-bold my-2 uppercase hover:cursor-pointer">{d.name}</p>

@@ -1,0 +1,7 @@
+.meal-detail-container {
+  position: relative;
+}
+
+.slick-next {
+  display: none !important;
+}
