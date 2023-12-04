@@ -15,6 +15,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Main />} />
           <Route path="/addmeal" element={<AddMeal />} />
+          <Route path="/deletemeal" element={<DeleteMeal />} />
         </Routes>
       </BrowserRouter>
     </div>
