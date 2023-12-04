@@ -3,6 +3,7 @@ import Splash from './components/Splash';
 import Login from './components/Login';
 import Signup from './components/SignUp';
 import Main from './components/Main';
+import AddMeal from './components/AddMeal';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Main />} />
+          <Route path="/addmeal" element={<AddMeal />} />
         </Routes>
       </BrowserRouter>
     </div>
