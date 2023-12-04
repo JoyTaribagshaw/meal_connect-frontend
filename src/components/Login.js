@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import backgroundImage from '../img/meals/meal77.jpg';
 import logo from '../img/logo2.png';
@@ -7,19 +7,19 @@ import { userLoggedIn } from '../features/login/loginSlice';
 
 const Login = () => {
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
-  const { isLoading,isLoggedIn, error } = useSelector((state) => state.login);
+  const navigate = useNavigate();
+  const { isLoading, isLoggedIn, error } = useSelector((state) => state.login);
 
   const [state, setState] = useState({
     email: '',
     password: '',
   });
 
-  // useEffect(() => {
-  //   if (isLoggedIn) {
-  //     navigate('/dashboard');
-  //   }
-  // });
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate('/dashboard');
+    }
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();

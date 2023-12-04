@@ -19,7 +19,7 @@ const Signup = () => {
 
   useEffect(() => {
     if (isRegistered) {
-      navigate('/dashboard');
+      navigate('/login');
     }
   }, [isRegistered, navigate]);
 
@@ -38,6 +38,16 @@ const Signup = () => {
 
   return (
     <div className="flex h-screen">
+      <div
+        className="flex-1"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'left',
+        }}
+      >
+        <img className="w-56" src={logo} alt="logoImg" />
+      </div>
       <div className="flex-1 flex flex-col justify-center items-center">
         <span className="w-16 mb-5 border-b-2 border-orange" />
         <h3 className="mb-4 text-center">
@@ -123,16 +133,6 @@ const Signup = () => {
             </form>
           </div>
         </div>
-      </div>
-      <div
-        className="flex-1"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'left',
-        }}
-      >
-        <img className="w-56" src={logo} alt="logoImg" />
       </div>
     </div>
   );

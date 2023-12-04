@@ -1,10 +1,17 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const TOKEN_KEY = 'access_token';
+const USER_KEY = 'user_data';
+
+const setAuthDataInStorage = (token, user) => {
+  localStorage.setItem(TOKEN_KEY, token);
+  localStorage.setItem(USER_KEY, JSON.stringify(user));
+};
+
 const initialState = {
-  email: '',
-  password: '',
-  user: {},
+  token: localStorage.getItem(TOKEN_KEY) || null,
+  user: JSON.parse(localStorage.getItem(USER_KEY)) || null,
   error: null,
   isLoading: false,
   isLoggedIn: false,
@@ -15,7 +22,17 @@ export const userLoggedIn = createAsyncThunk('login/userLoggedIn', async (userDa
     const response = await axios.post('http://127.0.0.1:4000/login', {
       user: userData,
     });
-    return response.data.user;
+
+    const authorizationHeader = response.headers.authorization || response.headers.Authorization;
+
+    if (authorizationHeader) {
+      const token = authorizationHeader.split(' ')[1];
+      const user = response.data;
+      setAuthDataInStorage(token, user);
+
+      return { user, token };
+    }
+    return undefined;
   } catch (error) {
     throw error.response.data;
   }
@@ -24,6 +41,15 @@ export const userLoggedIn = createAsyncThunk('login/userLoggedIn', async (userDa
 const loginSlice = createSlice({
   name: 'login',
   initialState,
+  reducers: {
+    userLoggedOut: (state) => {
+      state.user = null;
+      state.isLoggedIn = false;
+      state.token = null;
+      localStorage.removeItem(TOKEN_KEY);
+      localStorage.removeItem(USER_KEY);
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(userLoggedIn.pending, (state) => {
       state.isLoading = true;
@@ -33,7 +59,8 @@ const loginSlice = createSlice({
       .addCase(userLoggedIn.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isLoggedIn = true;
-        state.user = action.payload;
+        state.user = action.payload.user;
+        state.token = action.payload.token;
       })
       .addCase(userLoggedIn.rejected, (state, action) => {
         state.isLoading = false;
@@ -43,4 +70,5 @@ const loginSlice = createSlice({
   },
 });
 
+export const { userLoggedOut } = loginSlice.actions;
 export default loginSlice.reducer;

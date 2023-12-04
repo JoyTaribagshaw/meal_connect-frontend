@@ -1,19 +1,24 @@
-import React from 'react';
-// import { Navigate } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import UserProfile from './UserProfile';
 import Navigation from './navigation/Navigation';
 import MealSlider from './navigation/MealSlider';
 
 function Main() {
-  // const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
-  // if (!isLoggedIn) {
-  //   return <Navigate to="/login" replace={true} />;
-  // }
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem('user_data'));
+
+  useEffect(() => {
+    if (!user) {
+      navigate('/login');
+    }
+  }, []);
 
   return (
     <div className="flex">
       <Navigation />
       <MealSlider />
+      <UserProfile />
     </div>
   );
 }
