@@ -11,7 +11,7 @@ const AddMeal = () => {
     e.preventDefault();
 
     console.log({
-      name, description, price, photo, available
+      name, description, price, photo, available,
     });
   };
 
@@ -65,7 +65,7 @@ const AddMeal = () => {
             placeholder="Availability: True or False"
             onChange={(e) => setAvailability(e.target.value)}
           />
-          </div>
+        </div>
         <button
           className="bg-green text-white py-2 px-10 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"
           type="submit"
