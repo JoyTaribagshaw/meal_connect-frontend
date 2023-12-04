@@ -12,6 +12,9 @@ module.exports = {
       fontSize: {
         xxs: '.5rem',
       },
+      width: {
+        seventyP: '70%',
+      },
     },
   },
   plugins: [],
