@@ -29,4 +29,16 @@ const ReservationPage = () => {
                 <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><a href="#new" className="">Delete meal</a></li>
               </ul>
             </div>
-        
+            <div>
+          <ul className="flex gap-3 p-2">
+            <li><a href="#new"><img src={tw} alt="tw" className="w-4" /></a></li>
+            <li><a href="#new"><img src={fb} alt="fb" className="w-4" /></a></li>
+            <li><a href="#new"><img src={gp} alt="gp" className="w-4" /></a></li>
+            <li><a href="#new"><img src={vi} alt="vi" className="w-4" /></a></li>
+            <li><a href="#new"><img src={pint} alt="pint" className="w-4" /></a></li>
+          </ul>
+          <div className="p-2">
+            <p className="text-xs">&copy; 2023 connect-meal </p>
+          </div>
+        </div>
+      </div>
