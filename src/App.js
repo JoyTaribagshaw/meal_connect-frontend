@@ -4,7 +4,7 @@ import Login from './components/Login';
 import Signup from './components/SignUp';
 import Main from './components/Main';
 import AddMeal from './components/AddMeal';
-// import DeleteMeal from './components/DeleteMeal';
+import DeleteMeal from './components/DeleteMeal';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Main />} />
           <Route path="/addmeal" element={<AddMeal />} />
-          {/* <Route path="/deletemeal" element={<DeleteMeal />} /> */}
+          <Route path="/deletemeal" element={<DeleteMeal />} />
 
         </Routes>
       </BrowserRouter>
