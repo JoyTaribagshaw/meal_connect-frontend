@@ -2,7 +2,7 @@ import React from 'react';
 
 function DeleteMeal() {
   return (
-    <div>
+    <div className="max-w-md mx-auto my-8 p-6 bg-white rounded-md">
       <h1 className="text-2xl font-bold mb-10">My Meal(s):</h1>
       <div className="flex flex-col">
         <div className="bg-white rounded-lg shadow-md border-gray-300 border p-7 mr-1 mb-4 flex items-center justify-between">
