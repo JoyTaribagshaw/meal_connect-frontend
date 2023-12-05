@@ -1,13 +1,5 @@
 import React from 'react';
 
-// const ReservationPage = () => {
-//   const reservations = [
-//     {
-//       id: 1,
-//       title: 'Meal 1',
-//       image: meal1,
-//     },
-//   ];
 function DeleteMeal() {
   return (
     <>
