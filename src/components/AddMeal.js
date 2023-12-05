@@ -16,7 +16,7 @@ const AddMeal = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto my-8 p-6 bg-white rounded-md">
+    <div className="max-w-md mx-auto my-8 p-6 bg-white rounded-md w-[70%]">
       <h2 className="text-2xl font-bold mb-4">Add new meal</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
