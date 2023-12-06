@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import UserProfile from './UserProfile';
+// import UserProfile from './UserProfile';
 import Navigation from './navigation/Navigation';
 import MealSlider from './navigation/MealSlider';
 
@@ -18,7 +18,6 @@ function Main() {
     <div className="flex">
       <Navigation />
       <MealSlider />
-      <UserProfile />
     </div>
   );
 }
