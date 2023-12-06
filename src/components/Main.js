@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-// import UserProfile from './UserProfile';
 import Navigation from './navigation/Navigation';
 import MealSlider from './navigation/MealSlider';
 

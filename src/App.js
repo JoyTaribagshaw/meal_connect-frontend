@@ -7,6 +7,7 @@ import AddMealNav from './components/AddMealNav';
 import UserProfile from './components/UserProfile';
 import ReservationPage from './components/ReservationPage';
 import DeleteMeal from './components/DeleteMeal';
+import Details from './components/Details';
 // import DeleteMeal from './components/DeleteMeal';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/addmeal" element={<AddMealNav />} />
           <Route path="/myReservations" element={<ReservationPage />} />
           <Route path="/deleteMeal" element={<DeleteMeal />} />
+          <Route path="/meals/:id" element={<Details />} />
           {/* <Route path="/deletemeal" element={<DeleteMeal />} /> */}
 
         </Routes>
