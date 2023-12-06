@@ -25,7 +25,6 @@ function App() {
           <Route path="/deleteMeal" element={<DeleteMeal />} />
           <Route path="/meals/:id" element={<Details />} />
           {/* <Route path="/deletemeal" element={<DeleteMeal />} /> */}
-
         </Routes>
       </BrowserRouter>
     </div>
