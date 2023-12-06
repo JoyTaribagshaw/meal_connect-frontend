@@ -12,12 +12,13 @@ import vi from '../../img/vi.svg';
 function Navigation() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem('user_data'));
 
   const handleLogout = () => {
     dispatch(userLoggedOut());
     navigate('/login');
   };
-
+  const isAdmin = user && user.data && user.data.admin;
   return (
     <div className="h-screen flex flex-col justify-between border-r-4 border-gray-100 p-0 w-[25%] ml-2 mb-2">
       <div className="">
@@ -26,7 +27,7 @@ function Navigation() {
           <li className="w-full bg-green hover:bg-green active:bg-green focus:ring hover:text-white p-2"><Link to="/dashboard" className="">Meal</Link></li>
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><Link to="/reservation" className="">Reserve</Link></li>
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><Link to="/myReservations" className="">My Reservations</Link></li>
-          <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><Link to="/addmeal" className="">Add meal</Link></li>
+          {isAdmin && (<li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><Link to="/addmeal" className="">Add meal</Link></li>)}
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><Link to="/deleteMeal" className="">Delete meal</Link></li>
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2">
             <button type="button" onClick={handleLogout} className="cursor-pointer">
