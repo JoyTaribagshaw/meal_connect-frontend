@@ -80,6 +80,7 @@ function MealSlider() {
       </div>
     );
   }
+
   const settings = {
     dots: false,
     infinite: true,
