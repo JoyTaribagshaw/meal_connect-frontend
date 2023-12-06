@@ -22,21 +22,17 @@ const AddMeal = ({ addMeal }) => {
       available,
     };
 
-    try {
-      const res = await addMeal(mealData);
-      if (res.meta.requestStatus === 'fulfilled') {
-        setSuccessMessage('Meal added successfully');
-        setName('');
-        setDescription('');
-        setPrice('');
-        setPhoto('');
-        setAvailability('');
-      }
-      if (res.error) {
-        setSuccessMessage('Meal not added');
-      }
-    } catch (error) {
-      console.log(error);
+    const res = await addMeal(mealData);
+    if (res.meta.requestStatus === 'fulfilled') {
+      setSuccessMessage('Meal added successfully');
+      setName('');
+      setDescription('');
+      setPrice('');
+      setPhoto('');
+      setAvailability('');
+    }
+    if (res.error) {
+      setSuccessMessage('Meal not added');
     }
   };
   return (
