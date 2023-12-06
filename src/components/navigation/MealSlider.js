@@ -2,64 +2,14 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './slider.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FaFacebookF, FaTwitter, FaInstagramSquare } from 'react-icons/fa';
-import meal1 from '../../img/meals/meal1.jpg';
-import meal2 from '../../img/meals/meal2.jpg';
-import meal3 from '../../img/meals/meal3.jpg';
-import meal4 from '../../img/meals/meal4.jpg';
-import meal5 from '../../img/meals/meal5.jpg';
-import meal6 from '../../img/meals/meal6.jpg';
-import meal7 from '../../img/meals/meal7.jpg';
-
-const data = [
-  {
-    id: 1,
-    name: 'Meal One',
-    img: meal1,
-    description: 'Some description goes here, a logn description.',
-  },
-  {
-    id: 2,
-    name: 'Meal Two',
-    img: meal2,
-    description: 'Some description goes here, a logn description.',
-  },
-  {
-    id: 3,
-    name: 'Meal Three',
-    img: meal3,
-    description: 'Some description goes here, a logn description.',
-  },
-  {
-    id: 4,
-    name: 'Meal Four',
-    img: meal4,
-    description: 'Some description goes here, a logn description.',
-  },
-  {
-    id: 6,
-    name: 'Meal Five',
-    img: meal5,
-    description: 'Some description goes here, a logn description.',
-  },
-  {
-    id: 7,
-    name: 'Meal Six',
-    img: meal6,
-    description: 'Some description goes here, a logn description.',
-  },
-  {
-    id: 8,
-    name: 'Meal Seven',
-    img: meal7,
-    description: 'Some description goes here, a logn description.',
-  },
-];
+import { getMeals } from '../../features/admin/adminSlice';
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -110,8 +60,28 @@ function PrevArrow(props) {
 }
 
 function MealSlider() {
+  const meals = useSelector((state) => state.meals.meals);
+  const isLoading = useSelector((state) => state.meals.isLoading);
+  const isError = useSelector((state) => state.meals.isError);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getMeals());
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return (
+      <div>
+        Error:
+        {isError}
+      </div>
+    );
+  }
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -127,15 +97,15 @@ function MealSlider() {
       </div>
       <div className="relative">
         <Slider {...settings}>
-          {data.map((d) => (
-            <div key={d.id} className="meal-card flex items-center justify-center text-center">
+          {meals.map((meal) => (
+            <div key={meal.id} className="meal-card flex items-center justify-center text-center">
               <div className="flex justify-items-center align-items-center">
-                <img src={d.img} alt="meal1" className="m-auto p-auto w-64 rounded-full hover:cursor-pointer" />
+                <img src={meal.photo} alt="meal1" className="m-auto p-auto w-64 rounded-full hover:cursor-pointer" />
               </div>
               <div className="text-center my-6">
-                <p className="font-bold my-2 uppercase hover:cursor-pointer">{d.name}</p>
+                <p className="font-bold my-2 uppercase hover:cursor-pointer">{meal.name}</p>
                 <p className="text-xxs text-gray-500">You gonna love our meal!</p>
-                <p className="text-gray-500">{d.description}</p>
+                <p className="text-gray-500">{meal.description}</p>
               </div>
               <div className="">
                 <ul className="flex justify-center gap-5">

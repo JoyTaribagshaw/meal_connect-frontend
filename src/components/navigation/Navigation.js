@@ -12,10 +12,14 @@ import vi from '../../img/vi.svg';
 function Navigation() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem('user_data'));
 
   const handleLogout = () => {
     dispatch(userLoggedOut());
     navigate('/login');
+  };
+  const handleAddMeal = () => {
+    navigate('/addMeal');
   };
 
   return (
@@ -26,7 +30,10 @@ function Navigation() {
           <li className="w-full bg-green hover:bg-green active:bg-green focus:ring hover:text-white p-2"><a href="#new" className="">Meal</a></li>
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><a href="#new" className="">Reserve</a></li>
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><a href="#new" className="">My Reservation</a></li>
-          <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><a href="#new" className="">Add meal</a></li>
+          {user.data.admin && (
+            <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><a href="#new" onClick={handleAddMeal} className="">Add meal</a></li>
+          )}
+          {' '}
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><a href="#new" className="">Delete meal</a></li>
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2">
             <button type="button" onClick={handleLogout} className="cursor-pointer">
