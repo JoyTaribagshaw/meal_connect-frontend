@@ -10,7 +10,6 @@ import DeleteMeal from './components/DeleteMeal';
 import Details from './components/Details';
 // import DeleteMeal from './components/DeleteMeal';
 
-
 function App() {
   return (
     <div>
