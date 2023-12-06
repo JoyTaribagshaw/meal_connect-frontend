@@ -24,7 +24,7 @@ const AddMeal = ({ addMeal }) => {
 
     try {
       const res = await addMeal(mealData);
-      if (res.meta.requestStatus==="fulfilled") {
+      if (res.meta.requestStatus === 'fulfilled') {
         setSuccessMessage('Meal added successfully');
         setName('');
         setDescription('');
@@ -32,7 +32,7 @@ const AddMeal = ({ addMeal }) => {
         setPhoto('');
         setAvailability('');
       }
-      if(res.error){
+      if (res.error) {
         setSuccessMessage('Meal not added');
       }
     } catch (error) {
@@ -42,7 +42,7 @@ const AddMeal = ({ addMeal }) => {
   return (
     <div className="mx-auto my-8 p-6 bg-white rounded-md w-[90%]">
       <h2 className="text-2xl font-bold mb-4">Add new meal</h2>
-    
+
       {successMessage && <p>{successMessage}</p>}
       <form onSubmit={handleSubmit} className="max-w-md">
 
