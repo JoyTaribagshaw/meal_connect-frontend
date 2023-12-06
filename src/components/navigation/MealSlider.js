@@ -4,6 +4,7 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './slider.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -100,9 +101,9 @@ function MealSlider() {
         <Slider {...settings}>
           {meals.map((meal) => (
             <div key={meal.id} className="meal-card flex items-center justify-center text-center">
-              <div className="flex justify-items-center align-items-center">
+              <Link to={`/meals/${meal.id}`} className="flex justify-items-center align-items-center">
                 <img src={meal.photo} alt="meal1" className="m-auto p-auto w-64 rounded-full hover:cursor-pointer" />
-              </div>
+              </Link>
               <div className="text-center my-6">
                 <p className="font-bold my-2 uppercase hover:cursor-pointer">{meal.name}</p>
                 <p className="text-xxs text-gray-500">You gonna love our meal!</p>
