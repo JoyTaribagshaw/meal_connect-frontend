@@ -36,7 +36,7 @@ function Navigation() {
           </li>
         </ul>
       </div>
-      <div>
+      <div className="vss:w-full hidden vss:block">
         <ul className="flex gap-3 p-2">
           <li><a href="#new"><img src={tw} alt="tw" className="w-4" /></a></li>
           <li><a href="#new"><img src={fb} alt="fb" className="w-4" /></a></li>
