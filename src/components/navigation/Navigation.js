@@ -28,7 +28,7 @@ function Navigation() {
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><Link to="/reservation" className="">Reserve</Link></li>
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><Link to="/myReservations" className="">My Reservations</Link></li>
           {isAdmin && (<li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><Link to="/addmeal" className="">Add meal</Link></li>)}
-          <li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><Link to="/deleteMeal" className="">Delete meal</Link></li>
+          {isAdmin && (<li className="w-full hover:bg-green active:bg-green hover:text-white p-2"><Link to="/deleteMeal" className="">Delete meal</Link></li>)}
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2">
             <button type="button" onClick={handleLogout} className="cursor-pointer">
               Logout
