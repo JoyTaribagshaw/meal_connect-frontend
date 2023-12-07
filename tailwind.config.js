@@ -15,6 +15,9 @@ module.exports = {
       width: {
         seventyP: '70%',
       },
+      screens: {
+        vss: '480px',
+      },
     },
   },
   plugins: [],
