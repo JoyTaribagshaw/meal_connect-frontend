@@ -21,7 +21,7 @@ function Splash() {
         <img className="w-56" src={logo} alt="logoImg" />
         <h1 className="text-white text-4xl self-center">WELCOME</h1>
       </div>
-      <div className="flex gap-12 mt-32">
+      <div className="flex flex-col ss:flex-row gap-12 mt-32">
         <Link to="/login" className="bg-green px-6 py-2 rounded-3xl w-36 text-white text-center shadow-md hover:bg-orange">Login</Link>
         <Link to="/signup" className="bg-white px-6 py-2 rounded-3xl w-36 text-center text-green shadow-xl shadow-black-500 hover:bg-orange hover:text-white">Signup</Link>
       </div>
