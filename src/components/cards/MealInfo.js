@@ -4,70 +4,56 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import './mealInfo.css';
-import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { addReservation, getReservation } from '../../features/reservation/reservationSlice';
 
 function MealInfo() {
-  const [mealDetails, setMealDetails] = useState({});
+  const { reservation, isReserved, isError } = useSelector((state) => state.reservation);
+  const navigate = useNavigate();
   const [state, setState] = useState({
     quantity: '',
-    reserve_date: '',
-    reserve_time: '',
     spicy_level: '',
+    reserve_time: '',
+    reserve_date: '',
   });
 
-  const token = localStorage.getItem('access_token');
-
+  const dispatch = useDispatch();
   const { id } = useParams();
-  const url = `http://127.0.0.1:4000/api/v1/meals/${id}`;
 
   useEffect(() => {
-    const getMealsDetails = async () => {
-      const response = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setMealDetails(response.data);
-    };
-    getMealsDetails();
-  }, [id, token, url]);
+    dispatch(getReservation(id));
+  }, [dispatch, id]);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    const response = await axios.post(
-      `http://127.0.0.1:4000/api/v1/meals/${id}/reservations`,
-      {
-        quantity: state.quantity,
-        reserve_date: state.reserve_date,
-        reserve_time: state.reserve_time,
-        spicy_level: state.spicy_level,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      },
-    );
-    console.log(response.data);
+    dispatch(addReservation({ reservationData: state, id }));
   };
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.value });
   };
 
+  useEffect(() => {
+    if (isReserved) {
+      navigate('/myReservations');
+    } else if (isError) {
+      throw isError;
+    }
+  }, [isReserved, isError, reservation, navigate]);
+
   return (
     <div className="w-4/5">
       <div className="w-full mb-32 text-center mt-10">
         <h2 className="text-2xl font-bold">Reserve Your Meal 🥙 🍲 🥗</h2>
-        {mealDetails && (
+        {reservation && (
           <div className="meal-info flex p-4 gap-10 justify-center items-center mt-2 text-xs">
-            <p>{mealDetails.name}</p>
+            <p>{reservation.name}</p>
             <p>
               <span className="text-gray-500">Price💸:</span>
-              {` ${mealDetails.price} $`}
+              {` ${reservation.price} $`}
             </p>
           </div>
         )}
@@ -75,19 +61,19 @@ function MealInfo() {
 
       <div className="w-4/5 h-4/5 my-auto meal-detail-container flex justify-between">
         <div className="w-2/5">
-          {mealDetails && (
-          <div
-            key={mealDetails.id}
-            className="meal-card flex items-center justify-center text-center"
-          >
-            <div>
-              <img
-                src={mealDetails.photo}
-                alt="meal1"
-                className="m-auto p-auto w-72 rounded-full hover:cursor-pointer"
-              />
+          {reservation && (
+            <div
+              key={reservation.id}
+              className="meal-card flex items-center justify-center text-center"
+            >
+              <div>
+                <img
+                  src={reservation.photo}
+                  alt="meal1"
+                  className="m-auto p-auto w-72 rounded-full hover:cursor-pointer"
+                />
+              </div>
             </div>
-          </div>
           )}
         </div>
         <div className=" w-2/5">
