@@ -13,7 +13,7 @@ const ReservationPage = () => {
   ];
 
   return (
-    <div className="h-screen flex justify-between">
+    <div className="h-screen flex flex-col ss:flex-row">
       <Navigation />
       <div className="container mx-auto mt-8 ml-10 p-10">
         <h1 className="text-2xl font-bold mb-10">My Reservation(s):</h1>
