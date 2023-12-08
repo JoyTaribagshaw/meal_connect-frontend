@@ -1,6 +1,7 @@
 .main-slider-container {
   position: relative;
 }
+
 @media screen and (max-width: 600px) {
   .main-slider-container {
     width: 100vw;
