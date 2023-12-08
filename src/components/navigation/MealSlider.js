@@ -127,7 +127,14 @@ function MealSlider() {
           {meals.map((meal) => (
             <div key={meal.id} className="meal-card flex items-center justify-center text-center">
               <Link to={`/meals/${meal.id}`} className="flex justify-items-center align-items-center">
-                <img src={meal.photo} alt="meal1" className="m-auto p-auto w-64 rounded-full hover:cursor-pointer" />
+                <img
+                  src={meal.photo}
+                  alt="meal1"
+                  className="m-auto p-auto rounded-full hover:cursor-pointer"
+                  style={{ width: '200px', height: '200px', objectFit: 'cover' }}
+                />
+                {' '}
+
               </Link>
               <div className="text-center my-6">
                 <p className="font-bold my-2 uppercase hover:cursor-pointer">{meal.name}</p>
