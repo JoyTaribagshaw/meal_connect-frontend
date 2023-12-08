@@ -29,7 +29,7 @@ function MealInfo() {
   }, [id, token, url]);
 
   return (
-    <div className="w-4/5 h-4/5 my-auto meal-detail-container flex">
+    <div className="w-full h-4/5 my-auto mx-auto meal-detail-container flex flex-col ss:flex-row ss:w-4/5">
       <div className="w-seventyP">
         {mealDetails && (
           <div
@@ -40,14 +40,14 @@ function MealInfo() {
               <img
                 src={mealDetails.photo}
                 alt="meal1"
-                className="m-auto p-auto w-72 rounded-full hover:cursor-pointer"
+                className="m-auto p-auto w-64 ss:w-72 rounded-full hover:cursor-pointer"
               />
             </div>
           </div>
         )}
       </div>
       <div className="flex flex-col justify-between items-end w-full">
-        <div className="show-detail w-full mr-6">
+        <div className="show-detail w-full p ss:mx-6">
           <p className="text-right text-2xl font-bold">{mealDetails.name}</p>
           <p className="text-xs text-right text-gray-500 mb-5">Please select our spcial meals.</p>
           <div className="flex justify-between items-center bg-white w-full p-2">
