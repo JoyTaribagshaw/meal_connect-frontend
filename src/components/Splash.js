@@ -1,9 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import backgroundImage from '../img/meal6.jpg';
 import logo from '../img/logo2.png';
 
 function Splash() {
+  const navigate = useNavigate();
+  const token = localStorage.getItem('access_token');
+  useEffect(() => {
+    if (token) {
+      navigate('/dashboard');
+    }
+  }, [token, navigate]);
+
   return (
     <div
       className="h-screen relative"
