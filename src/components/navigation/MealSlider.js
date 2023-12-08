@@ -123,7 +123,7 @@ function MealSlider() {
         <p className="text-xxs text-center text-gray-500">Please select our spcial meals.</p>
       </div>
       <div className="relative">
-        <Slider {...settings}>
+        <Slider className="ss:w-full" {...settings}>
           {meals.map((meal) => (
             <div key={meal.id} className="meal-card flex items-center justify-center text-center">
               <Link to={`/meals/${meal.id}`} className="flex justify-items-center align-items-center">
