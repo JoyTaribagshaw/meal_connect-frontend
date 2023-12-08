@@ -35,7 +35,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex flex-col ss:flex-row h-screen">
       <div
         className="flex-1"
         style={{
