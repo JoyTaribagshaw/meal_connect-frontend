@@ -4,7 +4,7 @@ import MealInfo from './cards/MealInfo';
 
 function Details() {
   return (
-    <div className="flex">
+    <div className="flex flex-col ss:flex-row">
       <Navigation />
       <MealInfo />
 

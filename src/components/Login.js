@@ -35,7 +35,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex flex-col ss:flex-row h-screen">
       <div
         className="flex-1"
         style={{
@@ -44,7 +44,7 @@ const Login = () => {
           backgroundPosition: 'left',
         }}
       >
-        <img className="w-56" src={logo} alt="logoImg" />
+        <img className="w-36 ss:w-56" src={logo} alt="logoImg" />
       </div>
 
       <div className="flex-1 flex flex-col justify-center items-center">
@@ -101,7 +101,7 @@ const Login = () => {
                 </Link>
               </div>
               <div className="text-center">
-                <h4>If you dont have an account.</h4>
+                <h4>If you don&apos;t have an account.</h4>
               </div>
             </form>
           </div>

@@ -14,7 +14,7 @@ function Main() {
   }, [navigate, user]);
 
   return (
-    <div className="flex">
+    <div className="flex flex-col ss:flex-row">
       <Navigation />
       <MealSlider />
     </div>

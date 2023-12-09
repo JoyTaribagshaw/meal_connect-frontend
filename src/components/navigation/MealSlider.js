@@ -90,6 +90,31 @@ function MealSlider() {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <div className="w-4/5 h-4/5 my-auto main-slider-container">
@@ -98,7 +123,7 @@ function MealSlider() {
         <p className="text-xxs text-center text-gray-500">Please select our spcial meals.</p>
       </div>
       <div className="relative">
-        <Slider {...settings}>
+        <Slider className="ss:w-full" {...settings}>
           {meals.map((meal) => (
             <div key={meal.id} className="meal-card flex items-center justify-center text-center">
               <Link to={`/meals/${meal.id}`} className="flex justify-items-center align-items-center">
