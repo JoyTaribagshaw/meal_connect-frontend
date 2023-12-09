@@ -45,41 +45,6 @@ function MealInfo() {
   }, [isReserved, isError, reservation, navigate]);
 
   return (
-    <div className="w-full h-4/5 my-auto mx-auto meal-detail-container flex flex-col ss:flex-row ss:w-4/5">
-      <div className="w-seventyP">
-        {mealDetails && (
-          <div
-            key={mealDetails.id}
-            className="meal-card flex items-center justify-center text-center"
-          >
-            <div>
-              <img
-                src={mealDetails.photo}
-                alt="meal1"
-                className="m-auto p-auto w-64 ss:w-72 rounded-full hover:cursor-pointer"
-              />
-            </div>
-          </div>
-        )}
-      </div>
-      <div className="flex flex-col justify-between items-end w-full">
-        <div className="show-detail w-full p ss:mx-6">
-          <p className="text-right text-2xl font-bold">{mealDetails.name}</p>
-          <p className="text-xs text-right text-gray-500 mb-5">Please select our spcial meals.</p>
-          <div className="flex justify-between items-center bg-white w-full p-2">
-            <p>Desc</p>
-            <p className="overflow-hidden">{mealDetails.description}</p>
-          </div>
-          <div className="flex justify-between items-center bg-gray-300 w-full p-2">
-            <p>Price</p>
-            <p>{`${mealDetails.price} $`}</p>
-          </div>
-          <p className="text-xs">
-            <strong> 5% off </strong>
-            for
-            <em>Christmas Day</em>
-          </p>
-
     <div className="w-4/5">
       <div className="w-full mb-32 text-center mt-10">
         <h2 className="text-2xl font-bold">Reserve Your Meal 🥙 🍲 🥗</h2>
@@ -110,7 +75,6 @@ function MealInfo() {
               </div>
             </div>
           )}
-
         </div>
         <div className=" w-2/5">
           <form onSubmit={handleSubmit}>
