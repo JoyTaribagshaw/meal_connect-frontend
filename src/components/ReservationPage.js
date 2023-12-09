@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Navigation from './navigation/Navigation';
 
 const ReservationPage = () => {
+  const navigate = useNavigate();
   const [reservationList, setReservationList] = useState([]);
   const token = localStorage.getItem('access_token');
   const [deleted, setDeleted] = useState(false);
@@ -26,16 +28,15 @@ const ReservationPage = () => {
         Authorization: `Bearer ${token}`,
       },
     });
-    setDeleted(true)
+    setDeleted(true);
     return response.data;
   };
 
   useEffect(() => {
     if (deleted) {
-      navigate("/myReservations")
+      navigate('/dashboard');
     }
-  })
-
+  }, [navigate, deleted]);
 
   return (
     <div className="h-screen flex flex-col ss:flex-row">

@@ -29,7 +29,7 @@ function Navigation() {
         <div className="ss:w-full flex flex-row ss:flex-col justify-between items-center">
           <img src={logo} alt="logoImg" className="w-20 mb-3 ss:w-36" />
           <button className="mx-3 text-orange w-9" type="button" onClick={() => setIsMobile(!isMobile)}>
-            {isMobile ? (<span className="block ss:hidden"><VscMenu /></span>) : (<span className="block ss:hidden"><IoMdClose /></span>) }
+            {isMobile ? (<span className="block ss:hidden"><VscMenu /></span>) : (<span className="block ss:hidden"><IoMdClose /></span>)}
           </button>
         </div>
         <ul className={`flex flex-col gap-0 ss:block ${isMobile ? 'hidden' : 'top-20'}`}>
@@ -37,7 +37,7 @@ function Navigation() {
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><Link to="/reservation" className="">Reserve</Link></li>
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><Link to="/myReservations" className="">My Reservations</Link></li>
           {isAdmin && (<li className="w-full hover:bg-green active:bg-green hover:text-white p-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><Link to="/addmeal" className="">Add meal</Link></li>)}
-          <li className="w-full hover:bg-green active:bg-green hover:text-white p-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><Link to="/deleteMeal" className="">Delete meal</Link></li>
+          {isAdmin && (<li className="w-full hover:bg-green active:bg-green hover:text-white p-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><Link to="/deleteMeal" className="">Delete meal</Link></li>)}
           <li className="w-full hover:bg-green active:bg-green hover:text-white p-2">
             <button type="button" onClick={handleLogout} className="cursor-pointer">
               Logout
