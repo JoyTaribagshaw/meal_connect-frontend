@@ -141,8 +141,8 @@ function ReservationSlider() {
                 <p className="text-xxs text-gray-500">You gonna love our meal!</p>
                 <p className="text-gray-500">{meal.description}</p>
               </div>
-              <Link to={`/meals/${meal.id}`} className="bg-green w-full p-2 mx-auto">Reserve</Link>
-              <div className="">
+              <Link to={`/meal/${meal.id}`} className="bg-green w-full p-2 m-2 text-white">Reserve</Link>
+              <div className="mt-3">
                 <ul className="flex justify-center gap-5">
                   <li className="text-gray-500 hover:cursor-pointer border-solid border-2 border-gray-500 rounded-full p-1"><FaFacebookF /></li>
                   <li className="text-gray-500 hover:cursor-pointer border-solid border-2 border-gray-500 rounded-full p-1"><FaTwitter /></li>

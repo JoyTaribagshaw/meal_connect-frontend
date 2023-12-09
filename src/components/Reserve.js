@@ -1,10 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navigation from './navigation/Navigation';
-import MealSlider from './navigation/MealSlider';
 import ReservationSlider from './navigation/ReservationSlide';
 
-function Main() {
+function Reserve() {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem('user_data'));
 
@@ -22,4 +21,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Reserve;

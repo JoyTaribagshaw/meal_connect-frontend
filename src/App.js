@@ -9,7 +9,7 @@ import ReservationPage from './components/ReservationPage';
 import DeleteMeal from './components/DeleteMeal';
 import Details from './components/Details';
 import AddReserve from './components/AddReserve';
-import ReservationSlider from './components/navigation/ReservationSlide';
+import Reserve from './components/Reserve';
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
           <Route path="/deleteMeal" element={<DeleteMeal />} />
           <Route path="/meals/:id" element={<Details />} />
           <Route path="/meal/:id" element={<AddReserve />} />
-          <Route path="/reservation" element={<ReservationSlider />} />
+          <Route path="/reservation" element={<Reserve />} />
         </Routes>
       </BrowserRouter>
     </div>
