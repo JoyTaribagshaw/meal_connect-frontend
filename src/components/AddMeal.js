@@ -1,15 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addMeal } from '../features/admin/adminSlice';
 
 const AddMeal = ({ addMeal }) => {
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem('user_data'));
+
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [photo, setPhoto] = useState('');
   const [available, setAvailability] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const [isAdded, setAdded] = useState(false);
+
+  useEffect(() => {
+    if (user.data.admin == null) {
+      navigate('/dashboard');
+    }
+    if (isAdded) {
+      navigate('/dashboard');
+    }
+  }, [user, navigate, isAdded]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,11 +44,16 @@ const AddMeal = ({ addMeal }) => {
       setPrice('');
       setPhoto('');
       setAvailability('');
+      setAdded(true);
     }
     if (res.error) {
       setSuccessMessage('Meal not added');
     }
   };
+
+  useEffect(() => {
+
+  });
   return (
     <div className="mx-auto p-6 bg-white rounded-md w-[90%]">
       <h2 className="text-2xl font-bold mb-4">Add new meal</h2>

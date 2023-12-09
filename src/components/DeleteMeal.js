@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './navigation/Navigation';
 import {
   getAllMeals, deleteMeal, removeMeal, updateAvailability, updateWhenAvailable,
@@ -9,6 +10,14 @@ const DeleteMeal = () => {
   const allMeals = useSelector((state) => state.meals.allMeals);
   const isLoading = useSelector((state) => state.meals.isLoading);
   const isError = useSelector((state) => state.meals.isError);
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem('user_data'));
+
+  useEffect(() => {
+    if (user.data.admin == null) {
+      navigate('/dashboard');
+    }
+  }, [user, navigate]);
 
   const dispatch = useDispatch();
 
