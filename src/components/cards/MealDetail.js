@@ -49,7 +49,7 @@ function MealDetails() {
       <div className="flex flex-col justify-between items-end w-full">
         <div className="show-detail w-full mr-6">
           <p className="text-right text-2xl font-bold">{mealDetails.name}</p>
-          <p className="text-xs text-right text-gray-500 mb-5">Please select our spcial meals.</p>
+          <p className="text-xs text-right text-gray-500 mb-5">Please select our special meals.</p>
           <div className="flex justify-between items-center bg-white w-full p-2">
             <p>Desc</p>
             <p className="overflow-hidden">{mealDetails.description}</p>
