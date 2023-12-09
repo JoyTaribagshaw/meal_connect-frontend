@@ -114,7 +114,9 @@ function MealSlider() {
               <div className="text-center my-6">
                 <p className="font-bold my-2 uppercase hover:cursor-pointer">{meal.name}</p>
                 <p className="text-xxs text-gray-500">You gonna love our meal!</p>
-                <p className="text-gray-500">{meal.description}</p>
+                <p className="text-gray-500">
+                  {meal.description.length > 20 ? `${meal.description.substring(0, 20)}...` : meal.description}
+                </p>
               </div>
               <div className="">
                 <ul className="flex justify-center gap-5">
