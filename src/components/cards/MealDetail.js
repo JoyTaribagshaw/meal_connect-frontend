@@ -65,12 +65,12 @@ function MealDetails() {
           </p>
         </div>
         <div className="m-2">
-          <button
+          <Link
             className="text-white bg-green mr-4 p-3 rounded-xl mt-5"
-            type="button"
+            to={`/meal/${id}`}
           >
             Reserve
-          </button>
+          </Link>
         </div>
       </div>
       <Link to="/dashboard" className="flex justify-start text-xl bg-[#72b600] w-12 p-2 z-50 absolute text-center left-0 bottom-0 text-white rounded-r-full">&#x25c0;</Link>

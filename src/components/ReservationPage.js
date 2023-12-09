@@ -5,6 +5,7 @@ import Navigation from './navigation/Navigation';
 const ReservationPage = () => {
   const [reservationList, setReservationList] = useState([]);
   const token = localStorage.getItem('access_token');
+  const [deleted, setDeleted] = useState(false);
 
   useEffect(() => {
     const fetchReservations = async () => {
@@ -18,6 +19,23 @@ const ReservationPage = () => {
 
     fetchReservations();
   }, [token]);
+
+  const handleDelete = async (id) => {
+    const response = await axios.delete(`http://127.0.0.1:4000/api/v1/reservations/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    setDeleted(true)
+    return response.data;
+  };
+
+  useEffect(() => {
+    if (deleted) {
+      navigate("/myReservations")
+    }
+  })
+
 
   return (
     <div className="h-screen flex flex-col ss:flex-row">
@@ -67,6 +85,7 @@ const ReservationPage = () => {
               <button
                 type="button"
                 className="bg-red-500 text-white py-2 px-4 rounded"
+                onClick={() => handleDelete(reservation.reservation.id)}
               >
                 Delete
               </button>
