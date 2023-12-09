@@ -46,7 +46,7 @@ const Signup = () => {
           backgroundPosition: 'left',
         }}
       >
-        <img className="w-56" src={logo} alt="logoImg" />
+        <img className="w-32 ss:w-56" src={logo} alt="logoImg" />
       </div>
       <div className="flex-1 flex flex-col justify-center items-center">
         <span className="w-16 mb-5 border-b-2 border-orange" />
