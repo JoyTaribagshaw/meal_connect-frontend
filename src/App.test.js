@@ -1,8 +1,10 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import UserProfile from '../src/components/UserProfile';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders UserProfile component without user data', () => {
+  render(<UserProfile />);
+
+  const userProfileElement = screen.queryByText(/Email/i);
+  expect(userProfileElement).toBeNull();
 });

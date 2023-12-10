@@ -14,7 +14,6 @@ test('renders navigation links in Navigation component', () => {
     </Provider>
   );
 
-  // Check if specific navigation links are present
   const mealLink = screen.getByRole('link', { name: /meal/i });
   const reserveLink = screen.getByRole('link', { name: /reserve/i });
   const myReservationsLink = screen.getByRole('link', { name: /my reservations/i });
@@ -24,6 +23,6 @@ test('renders navigation links in Navigation component', () => {
   expect(mealLink).toBeInTheDocument();
   expect(reserveLink).toBeInTheDocument();
   expect(myReservationsLink).toBeInTheDocument();
-  expect(addMealLink).toBeNull(); // Assuming it's not present for non-admin users
-  expect(deleteMealLink).toBeNull(); // Assuming it's not present for non-admin users
+  expect(addMealLink).toBeNull();
+  expect(deleteMealLink).toBeNull();
 });

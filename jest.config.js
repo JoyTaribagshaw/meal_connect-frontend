@@ -7,5 +7,8 @@ module.exports = {
     moduleNameMapper: {
       '^axios$': './__mocks__/axios',
     },
+      jest: {
+        "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"]
+      },
   };
   
