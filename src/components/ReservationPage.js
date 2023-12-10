@@ -46,6 +46,14 @@ const ReservationPage = () => {
                   {' '}
                   $
                 </p>
+                <p>
+                  Quantity:
+                  {reservation.reservation.quantity}
+                </p>
+                <p>
+                  Spicy:
+                  {reservation.reservation.spicy_level}
+                </p>
               </div>
               <div>
                 <h2 className="text-lg font-semibold flex-grow text-center">

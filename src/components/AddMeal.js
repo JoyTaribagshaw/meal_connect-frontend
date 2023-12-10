@@ -13,7 +13,6 @@ const AddMeal = ({ addMeal }) => {
   const [price, setPrice] = useState('');
   const [photo, setPhoto] = useState('');
   const [available, setAvailability] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
   const [isAdded, setAdded] = useState(false);
 
   useEffect(() => {
@@ -36,26 +35,14 @@ const AddMeal = ({ addMeal }) => {
       available,
     };
 
-    const res = await addMeal(mealData);
-    if (res.meta.requestStatus === 'fulfilled') {
-      setSuccessMessage('Meal added successfully');
-      setName('');
-      setDescription('');
-      setPrice('');
-      setPhoto('');
-      setAvailability('');
-      setAdded(true);
-    }
-    if (res.error) {
-      setSuccessMessage('Meal not added');
-    }
+    addMeal(mealData);
+    setAdded(true);
   };
 
   return (
     <div className="mx-auto p-6 bg-white rounded-md w-[90%]">
       <h2 className="text-2xl font-bold mb-4">Add new meal</h2>
 
-      {successMessage && <p>{successMessage}</p>}
       <form onSubmit={handleSubmit} className="max-w-md">
 
         <div className="mb-4">
@@ -66,6 +53,7 @@ const AddMeal = ({ addMeal }) => {
             placeholder="Name:"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
           />
         </div>
         <div className="mb-4">
@@ -75,6 +63,7 @@ const AddMeal = ({ addMeal }) => {
             placeholder="Description:"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            required
           />
         </div>
         <div className="mb-4">
@@ -85,6 +74,7 @@ const AddMeal = ({ addMeal }) => {
             placeholder="Price:"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
+            required
           />
         </div>
         <div className="mb-4">
@@ -94,6 +84,7 @@ const AddMeal = ({ addMeal }) => {
             id="photo"
             placeholder="Upload image url:"
             onChange={(e) => setPhoto(e.target.value)}
+            required
           />
         </div>
         <div className="mb-4">
@@ -103,6 +94,7 @@ const AddMeal = ({ addMeal }) => {
             id="available"
             placeholder="Availability: True or False"
             onChange={(e) => setAvailability(e.target.value)}
+            required
           />
         </div>
         <button
