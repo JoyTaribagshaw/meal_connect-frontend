@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import UserProfile from '../src/components/UserProfile';
+import UserProfile from './components/UserProfile';
 
 test('renders UserProfile component without user data', () => {
   render(<UserProfile />);

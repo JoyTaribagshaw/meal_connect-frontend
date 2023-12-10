@@ -11,7 +11,7 @@ test('renders navigation links in Navigation component', () => {
       <MemoryRouter>
         <Navigation />
       </MemoryRouter>
-    </Provider>
+    </Provider>,
   );
 
   const mealLink = screen.getByRole('link', { name: /meal/i });

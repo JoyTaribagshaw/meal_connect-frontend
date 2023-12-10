@@ -14,7 +14,7 @@ test('renders MealSlider component', () => {
     render(
       <Provider store={store}>
         <MealSlider />
-      </Provider>
+      </Provider>,
     );
   });
 });
