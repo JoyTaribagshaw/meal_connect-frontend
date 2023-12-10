@@ -11,8 +11,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addReservation, getReservation } from '../../features/reservation/reservationSlice';
 
 function MealInfo() {
-  const { reservation, isReserved, isError } = useSelector((state) => state.reservation);
+  const { reservation } = useSelector((state) => state.reservation);
+  const [isAdded, setAdded] = useState(false);
+
   const navigate = useNavigate();
+
   const [state, setState] = useState({
     quantity: '',
     spicy_level: '',
@@ -30,6 +33,7 @@ function MealInfo() {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(addReservation({ reservationData: state, id }));
+    setAdded(true);
   };
 
   const handleChange = (event) => {
@@ -37,12 +41,10 @@ function MealInfo() {
   };
 
   useEffect(() => {
-    if (isReserved) {
+    if (isAdded) {
       navigate('/myReservations');
-    } else if (isError) {
-      throw isError;
     }
-  }, [isReserved, isError, reservation, navigate]);
+  }, [isAdded, navigate]);
 
   return (
     <div className="w-4/5">

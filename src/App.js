@@ -8,7 +8,8 @@ import UserProfile from './components/UserProfile';
 import ReservationPage from './components/ReservationPage';
 import DeleteMeal from './components/DeleteMeal';
 import Details from './components/Details';
-// import DeleteMeal from './components/DeleteMeal';
+import AddReserve from './components/AddReserve';
+import Reserve from './components/Reserve';
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
           <Route path="/myReservations" element={<ReservationPage />} />
           <Route path="/deleteMeal" element={<DeleteMeal />} />
           <Route path="/meals/:id" element={<Details />} />
-          {/* <Route path="/deletemeal" element={<DeleteMeal />} /> */}
+          <Route path="/meal/:id" element={<AddReserve />} />
+          <Route path="/reservation" element={<Reserve />} />
         </Routes>
       </BrowserRouter>
     </div>

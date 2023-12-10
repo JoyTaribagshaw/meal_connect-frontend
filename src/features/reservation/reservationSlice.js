@@ -3,10 +3,41 @@ import axios from 'axios';
 
 const initialState = {
   reservation: [],
+  allReserve: [],
   isLoading: false,
-  isError: '',
+  isError: null,
   isReserved: false,
 };
+export const allReservation = createAsyncThunk('reservation/allReservation', async (id, thunkAPI) => {
+  try {
+    const token = localStorage.getItem('access_token');
+
+    const response = await axios.get('http://127.0.0.1:4000/api/v1/reservations', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.response.data);
+  }
+});
+
+export const deleteReservation = createAsyncThunk('reservation/deleteReservation', async (id, thunkAPI) => {
+  try {
+    const token = localStorage.getItem('access_token');
+
+    const response = await axios.delete(`http://127.0.0.1:4000/api/v1/reservations/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.response.data);
+  }
+});
 
 export const addReservation = createAsyncThunk('reservation/addReservation', async ({ reservationData, id }, thunkAPI) => {
   try {
@@ -43,20 +74,19 @@ export const getReservation = createAsyncThunk('reservation/getReservation', asy
 const reservationSlice = createSlice({
   name: 'reservation',
   initialState,
-  reducers: {},
+  reducers: {
+    removeReservation: (state, action) => {
+      const reservationId = action.payload;
+      state.allReserve = state.allReserve.filter(
+        (reservation) => reservation.reservation.id !== reservationId,
+      );
+    },
+
+  },
   extraReducers: (builder) => {
     builder
       .addCase(addReservation.pending, (state) => {
         state.isLoading = true;
-      })
-      .addCase(addReservation.fulfilled, (state) => {
-        state.isLoading = false;
-        state.isError = '';
-        state.isReserved = true;
-      })
-      .addCase(addReservation.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isError = action.payload;
       })
       .addCase(getReservation.pending, (state) => {
         state.isLoading = true;
@@ -68,8 +98,24 @@ const reservationSlice = createSlice({
       .addCase(getReservation.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = action.payload;
+      })
+      .addCase(allReservation.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(allReservation.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.allReserve = action.payload;
+      })
+      .addCase(allReservation.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = action.payload;
+      })
+      .addCase(deleteReservation.fulfilled, (state) => {
+        state.isLoading = false;
+        state.isError = '';
       });
   },
 });
 
 export default reservationSlice.reducer;
+export const { removeReservation } = reservationSlice.actions;

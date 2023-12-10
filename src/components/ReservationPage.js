@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteReservation, allReservation, removeReservation } from '../features/reservation/reservationSlice';
 import Navigation from './navigation/Navigation';
 
 const ReservationPage = () => {
-  const [reservationList, setReservationList] = useState([]);
-  const token = localStorage.getItem('access_token');
+  const reservationList = useSelector((state) => state.reservation.allReserve);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchReservations = async () => {
-      const response = await axios.get('http://127.0.0.1:4000/api/v1/reservations', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setReservationList(response.data);
-    };
+    dispatch(allReservation());
+  }, [dispatch]);
 
-    fetchReservations();
-  }, [token]);
+  const handleDelete = (id) => {
+    dispatch(deleteReservation(id)).then(() => {
+      dispatch(removeReservation(id));
+    }).catch((error) => {
+      throw error;
+    });
+  };
 
   return (
     <div className="h-screen flex flex-col ss:flex-row">
@@ -36,13 +36,12 @@ const ReservationPage = () => {
                 className="w-16 h-16 object-cover rounded mr-4"
               />
               <div>
-                <h2
-                  className="text-lg font-semibold flex-grow text-center"
-                >
+                <h2 className="text-lg font-semibold flex-grow text-center">
                   {reservation.meal.name}
                 </h2>
                 <p>
                   Total price:
+                  {' '}
                   {reservation.total.total_price}
                   {' '}
                   $
@@ -55,12 +54,9 @@ const ReservationPage = () => {
                   Spicy:
                   {reservation.reservation.spicy_level}
                 </p>
-
               </div>
               <div>
-                <h2
-                  className="text-lg font-semibold flex-grow text-center"
-                >
+                <h2 className="text-lg font-semibold flex-grow text-center">
                   Date:
                   {' '}
                   {reservation.reservation.reserve_date}
@@ -70,20 +66,18 @@ const ReservationPage = () => {
                   {' '}
                   {reservation.reservation.reserve_time}
                 </p>
-
               </div>
               <button
                 type="button"
                 className="bg-red-500 text-white py-2 px-4 rounded"
+                onClick={() => handleDelete(reservation.reservation.id)}
               >
                 Delete
               </button>
             </div>
           ))}
         </div>
-
       </div>
-
     </div>
   );
 };
