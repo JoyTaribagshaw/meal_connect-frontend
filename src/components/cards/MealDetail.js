@@ -11,22 +11,34 @@ import 'slick-carousel/slick/slick-theme.css';
 
 function MealDetails() {
   const [mealDetails, setMealDetails] = useState({});
+  const [error, setError] = useState(null); // Ajout d'un état pour stocker les erreurs
   const token = localStorage.getItem('access_token');
-
   const { id } = useParams();
   const url = `http://127.0.0.1:4000/api/v1/meals/${id}`;
 
   useEffect(() => {
     const getMealsDetails = async () => {
-      const response = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setMealDetails(response.data);
+      try {
+        const response = await axios.get(url, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (response && response.data) {
+          setMealDetails(response.data);
+        }
+      } catch (error) {
+        console.error('Error fetching meal details:', error);
+        setError(error);
+      }
     };
+
     getMealsDetails();
   }, [id, token, url]);
+
+  if (error) {
+    return <div>Error fetching meal details.</div>; // Affichage de l'erreur à l'utilisateur
+  }
 
   return (
     <div className="w-4/5 h-4/5 my-auto meal-detail-container flex">
