@@ -47,9 +47,9 @@ function MealInfo() {
   }, [isAdded, navigate]);
 
   return (
-    <div className="w-4/5">
+    <div className="w-full md:w-4/5">
       <div className="w-full mb-32 text-center mt-10">
-        <h2 className="text-2xl font-bold">Reserve Your Meal 🥙 🍲 🥗</h2>
+        <h2 className="text-2xl font-bold vss:text-4xl md:text-3xl md:font-bold">Reserve Your Meal 🥙 🍲 🥗</h2>
         {reservation && (
           <div className="meal-info flex p-4 gap-10 justify-center items-center mt-2 text-xs">
             <p>{reservation.name}</p>
@@ -61,8 +61,8 @@ function MealInfo() {
         )}
       </div>
 
-      <div className="w-4/5 h-4/5 my-auto meal-detail-container flex justify-between">
-        <div className="w-2/5">
+      <div className="grid grid-cols-1 gap-10 w-4/5 mx-auto md:w-4/5 md:h-4/5 md:my-auto md:meal-detail-container md:flex md:justify-between">
+        <div className="w-full md:w-2/5">
           {reservation && (
             <div
               key={reservation.id}
@@ -71,14 +71,14 @@ function MealInfo() {
               <div>
                 <img
                   src={reservation.photo}
-                  alt="meal1"
+                  alt={reservation.name}
                   className="m-auto p-auto w-72 rounded-full hover:cursor-pointer"
                 />
               </div>
             </div>
           )}
         </div>
-        <div className=" w-2/5">
+        <div className="w-full md:w-2/5">
           <form onSubmit={handleSubmit}>
             <div className="mb-6 w-full">
               <input
@@ -138,8 +138,8 @@ function MealInfo() {
             <button type="submit" className="text-white bg-[#72b600] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Reserve</button>
           </form>
         </div>
-        <Link to="/dashboard" className="flex justify-start text-xl bg-[#72b600] w-12 p-2 z-50 absolute text-center left-0 bottom-[50%] text-white rounded-r-full">&#x25c0;</Link>
       </div>
+      <Link to="/dashboard" className="absolute vss:bottom-0 md:bottom-0  text-2xl bg-[#72b600] vss:text-xl w-12 p-2 z-50 text-center text-white rounded-r-full ">&#x25c0;</Link>
     </div>
 
   );
