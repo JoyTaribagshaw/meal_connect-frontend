@@ -28,7 +28,6 @@ function MealDetails() {
           setMealDetails(response.data);
         }
       } catch (error) {
-        console.error('Error fetching meal details:', error);
         setError(error);
       }
     };
@@ -37,7 +36,7 @@ function MealDetails() {
   }, [id, token, url]);
 
   if (error) {
-    return <div>Error fetching meal details.</div>; // Affichage de l'erreur à l'utilisateur
+    return <div>Error fetching meal details.</div>;
   }
 
   return (
