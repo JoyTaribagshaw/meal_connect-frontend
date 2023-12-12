@@ -24,7 +24,7 @@ const ReservationPage = () => {
   return (
     <div className="h-screen flex flex-col ss:flex-row">
       <Navigation />
-      <div className="container ss:overflow-scroll mx-auto mt-8 p-10">
+      <div className="container ss:overflow-scroll mx-auto p-10">
         <h1 className="text-2xl font-bold mb-10 ml-8">My Reservation(s):</h1>
         <div className="flex flex-col items-center">
           {reservationList.map((reservation) => (
@@ -42,21 +42,33 @@ const ReservationPage = () => {
                   {reservation.meal.name}
                 </h2>
                 <p className="text-center">
-                  Total price: {reservation.total.total_price} $
+                  Total price:
+                  {' '}
+                  {reservation.total.total_price}
+                  {' '}
+                  $
                 </p>
                 <p className="text-center">
-                  Quantity: {reservation.reservation.quantity}
+                  Quantity:
+                  {' '}
+                  {reservation.reservation.quantity}
                 </p>
                 <p className="text-center">
-                  Spicy: {reservation.reservation.spicy_level}
+                  Spicy:
+                  {' '}
+                  {reservation.reservation.spicy_level}
                 </p>
               </div>
               <div>
                 <h2 className="text-center">
-                  Date: {reservation.reservation.reserve_date}
+                  Date:
+                  {' '}
+                  {reservation.reservation.reserve_date}
                 </h2>
                 <p className="text-center">
-                  Time: {reservation.reservation.reserve_time}
+                  Time:
+                  {' '}
+                  {reservation.reservation.reserve_time}
                 </p>
               </div>
               <button
