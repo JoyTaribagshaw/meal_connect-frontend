@@ -47,7 +47,7 @@ function MealInfo() {
   }, [isAdded, navigate]);
 
   return (
-    <div className="w-full md:w-4/5">
+    <div className="ss:overflow-scroll w-full md:w-4/5">
       <div className="w-full mb-32 text-center mt-10">
         <h2 className="text-2xl font-bold vss:text-4xl md:text-3xl md:font-bold">Reserve Your Meal 🥙 🍲 🥗</h2>
         {reservation && (

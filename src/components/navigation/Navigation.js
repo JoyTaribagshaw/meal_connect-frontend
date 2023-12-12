@@ -22,9 +22,13 @@ function Navigation() {
     navigate('/login');
   };
   const isAdmin = user && user.data && user.data.admin;
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
+
+  const navClick = () => {
+    setIsMobile(true);
+  };
   return (
-    <div className="nav h-screen flex flex-col :flex-row justify-between border-r-4 border-gray-100 pl-3 w-[25%] mb-2">
+    <div className="nav h-screen flex flex-col justify-between border-r-4 border-gray-100 pl-3 w-[25%] mb-2">
       <div className="header">
         <div className="ss:w-full flex flex-row ss:flex-col justify-between items-center">
           <img src={logo} alt="logoImg" className="w-20 mb-3 ss:w-36" />
@@ -33,11 +37,11 @@ function Navigation() {
           </button>
         </div>
         <ul className={`flex flex-col gap-0 ss:block ${isMobile ? 'hidden' : 'top-20'}`}>
-          <li className="w-full hover:text-white hover:bg-green pl-2 hover:block py-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><NavLink activeClassName="active" to="/dashboard">Meal</NavLink></li>
-          <li className="w-full hover:text-white hover:bg-green pl-2 hover:block py-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><NavLink activeClassName="active" to="/reservation">Reserve</NavLink></li>
-          <li className="w-full hover:text-white hover:bg-green pl-2 hover:block py-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><NavLink activeClassName="active" to="/myReservations">My Reservations</NavLink></li>
-          {isAdmin && (<li className="w-full hover:text-white pl-2 hover:bg-green focus:ring hover:block py-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><NavLink activeClassName="active" to="/addmeal">Add meal</NavLink></li>)}
-          <li className="w-full hover:text-white hover:bg-green pl-2 focus:ring hover:block py-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><NavLink activeClassName="active" to="/deleteMeal">Delete meal</NavLink></li>
+          <li className="w-full hover:text-white hover:bg-green pl-2 hover:block py-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><NavLink activeClassName="active" onClick={navClick} to="/dashboard">Meal</NavLink></li>
+          <li className="w-full hover:text-white hover:bg-green pl-2 hover:block py-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><NavLink activeClassName="active" onClick={navClick} to="/reservation">Reserve</NavLink></li>
+          <li className="w-full hover:text-white hover:bg-green pl-2 hover:block py-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><NavLink activeClassName="active" onClick={navClick} to="/myReservations">My Reservations</NavLink></li>
+          {isAdmin && (<li className="w-full hover:text-white pl-2 hover:bg-green focus:ring hover:block py-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><NavLink activeClassName="active" onClick={navClick} to="/addmeal">Add meal</NavLink></li>)}
+          <li className="w-full hover:text-white hover:bg-green pl-2 focus:ring hover:block py-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><NavLink activeClassName="active" onClick={navClick} to="/deleteMeal">Delete meal</NavLink></li>
           <li className="w-full hover:bg-green pl-2 active:bg-green py-2 hover:text-white">
             <button type="button" onClick={handleLogout} className="cursor-pointer">
               Logout
