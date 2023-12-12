@@ -111,6 +111,13 @@ Then run the app with the command
 - GitHub: [Joy](https://github.com/JoyTaribagshaw)
 - Twitter: [Joy](https://twitter.com/JoyTariBagshaw)
 - LinkedIn: [Joy](https://linkedin.com/in/joytaribagshaw)
+
+👤 **Margaret Kojo**
+
+- GitHub: [MargaretTechworld](https://github.com/MargaretTechworld)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/margaret-kojo-musa/)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
