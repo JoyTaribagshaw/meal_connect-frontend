@@ -41,7 +41,7 @@ function Navigation() {
           <li className="w-full hover:text-white hover:bg-green pl-2 hover:block py-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><NavLink activeClassName="active" onClick={navClick} to="/reservation">Reserve</NavLink></li>
           <li className="w-full hover:text-white hover:bg-green pl-2 hover:block py-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><NavLink activeClassName="active" onClick={navClick} to="/myReservations">My Reservations</NavLink></li>
           {isAdmin && (<li className="w-full hover:text-white pl-2 hover:bg-green focus:ring hover:block py-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><NavLink activeClassName="active" onClick={navClick} to="/addmeal">Add meal</NavLink></li>)}
-          <li className="w-full hover:text-white hover:bg-green pl-2 focus:ring hover:block py-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><NavLink activeClassName="active" onClick={navClick} to="/deleteMeal">Delete meal</NavLink></li>
+          {isAdmin && (<li className="w-full hover:text-white hover:bg-green pl-2 focus:ring hover:block py-2 border-b-2 sm:border-none sm:border-b sm:hover:border-b-2"><NavLink activeClassName="active" onClick={navClick} to="/deleteMeal">Delete meal</NavLink></li>)}
           <li className="w-full hover:bg-green pl-2 active:bg-green py-2 hover:text-white">
             <button type="button" onClick={handleLogout} className="cursor-pointer">
               Logout
