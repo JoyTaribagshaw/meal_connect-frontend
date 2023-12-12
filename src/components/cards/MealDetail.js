@@ -52,6 +52,7 @@ function MealDetails() {
                 src={mealDetails.photo}
                 alt="meal1"
                 className="m-auto p-auto w-72 rounded-full hover:cursor-pointer"
+                style={{ width: '250px', height: '250px', objectFit: 'cover' }}
               />
             </div>
           </div>
