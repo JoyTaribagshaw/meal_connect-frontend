@@ -106,6 +106,11 @@ Then run the app with the command
 - LinkedIn: [Berhanu Baye](https://www.linkedin.com/in/bran-baye)
 
 
+👤 **Joy Tari**
+
+- GitHub: [Joy](https://github.com/JoyTaribagshaw)
+- Twitter: [Joy](https://twitter.com/JoyTariBagshaw)
+- LinkedIn: [Joy](https://linkedin.com/in/joytaribagshaw)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
