@@ -40,7 +40,7 @@ function MealDetails() {
   }
 
   return (
-    <div className="w-4/5 h-4/5 my-auto meal-detail-container flex">
+    <div className="w-full h-full my-auto meal-detail-container flex ss:flex-row flex-col items-center">
       <div className="w-seventyP">
         {mealDetails && (
           <div
@@ -59,10 +59,10 @@ function MealDetails() {
         )}
       </div>
       <div className="flex flex-col justify-between items-end w-full">
-        <div className="show-detail w-full mr-6">
+        <div className="show-detail w-full">
           <p className="text-right text-2xl font-bold">{mealDetails.name}</p>
           <p className="text-xs text-right text-gray-500 mb-5">Please select our special meals.</p>
-          <div className="flex justify-between items-center bg-white w-full p-2">
+          <div className="flex justify-between ss:right items-center bg-white w-full p-2">
             <p>Desc</p>
             <p className="overflow-hidden">{mealDetails.description}</p>
           </div>
