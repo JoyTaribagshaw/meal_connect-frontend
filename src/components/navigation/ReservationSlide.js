@@ -84,27 +84,27 @@ function ReservationSlider() {
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: meals.length > 3, // Set infinite to true if meals are more than 3
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: meals.length >= 3 ? 3 : meals.length,
+    slidesToScroll: meals.length >= 3 ? 1 : meals.length,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
+          slidesToShow: meals.length >= 3 ? 3 : meals.length,
+          slidesToScroll: meals.length >= 3 ? 1 : meals.length,
+          infinite: meals.length > 3,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToShow: meals.length >= 2 ? 2 : meals.length,
+          slidesToScroll: meals.length >= 2 ? 2 : meals.length,
+          initialSlide: meals.length >= 2 ? 2 : 0,
         },
       },
       {

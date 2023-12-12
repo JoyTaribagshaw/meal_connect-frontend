@@ -40,7 +40,7 @@ const AddMeal = ({ addMeal }) => {
   };
 
   return (
-    <div className="mx-auto p-6 bg-white rounded-md w-[90%]">
+    <div className="mx-auto ss:overflow-scroll p-6 bg-white rounded-md w-[90%]">
       <h2 className="text-2xl font-bold mb-4">Add new meal</h2>
 
       <form onSubmit={handleSubmit} className="max-w-md">

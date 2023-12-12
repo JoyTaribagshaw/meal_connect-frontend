@@ -51,7 +51,7 @@ const Signup = () => {
       <div className="flex-1 flex flex-col justify-center items-center">
         <span className="w-16 mb-5 border-b-2 border-orange" />
         <h3 className="mb-4 text-center">
-          Welcome to Connect-meal booking site!
+          Welcome to Meal-Connect booking site!
         </h3>
 
         <div className="flex justify-center items-center">
