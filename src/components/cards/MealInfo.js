@@ -73,6 +73,7 @@ function MealInfo() {
                   src={reservation.photo}
                   alt={reservation.name}
                   className="m-auto p-auto w-72 rounded-full hover:cursor-pointer"
+                  style={{ width: '250px', height: '250px', objectFit: 'cover' }}
                 />
               </div>
             </div>

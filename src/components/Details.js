@@ -8,7 +8,6 @@ function Details() {
     <div className="flex flex-col ss:flex-row">
       <Navigation />
       <MealDetails />
-
     </div>
   );
 }
