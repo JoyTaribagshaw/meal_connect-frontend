@@ -71,7 +71,7 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-`git clone git@github.com:Zilola-Nazarova/workspace-reservation-front-end.git`
+[`git clone git@github.com:Zilola-Nazarova/workspace-reservation-front-end.git`](https://github.com/MargaretTechworld/meal_connect-frontend.git)
 
 ### Install
 
