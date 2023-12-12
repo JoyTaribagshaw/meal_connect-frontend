@@ -93,18 +93,15 @@ Then run the app with the command
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Essohanam TAMBANA**
+👤 **Bahati Zirimwabagabo**
 
-- GitHub: [@GhostEsso](https://github.com/GhostEsso)
-- Twitter: [@TambanaEssohana](https://twitter.com/TambanaEssohana)
-- LinkedIn: [Tambana Essohanam](https://www.linkedin.com/in/essohanam-tambana)
-
+- GitHub: [zbahati](https://github.com/zbahati)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/zirimwabagabo-bahati)
 
 👤 **Berhanu Baye**
 - GitHub: [@BranBayou](https://github.com/BranBayou)
 - Twitter: [@bran-baye](https://twitter.com/bran_baye)
 - LinkedIn: [Berhanu Baye](https://www.linkedin.com/in/bran-baye)
-
 
 👤 **Joy Tari**
 
@@ -116,6 +113,14 @@ Then run the app with the command
 
 - GitHub: [MargaretTechworld](https://github.com/MargaretTechworld)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/margaret-kojo-musa/)
+- Twitter: [twitter](https://twitter.com/KojoMargaret)
+
+
+👤 **Essohanam TAMBANA**
+
+- GitHub: [@GhostEsso](https://github.com/GhostEsso)
+- Twitter: [@TambanaEssohana](https://twitter.com/TambanaEssohana)
+- LinkedIn: [Tambana Essohanam](https://www.linkedin.com/in/essohanam-tambana)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
