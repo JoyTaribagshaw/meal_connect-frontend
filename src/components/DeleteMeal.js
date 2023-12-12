@@ -52,11 +52,11 @@ const DeleteMeal = () => {
   return (
     <div className="h-screen flex flex-col ss:flex-row">
       <Navigation />
-      <div className="container ss:overflow-scroll mx-auto mt-8 ml-10 p-10">
-        <h1 className="text-2xl font-bold mb-10">My Meals(s):</h1>
+      <div className="container ss:overflow-scroll mx-auto mt-8 p-10">
+        <h1 className="text-2xl font-bold mb-10 ml-8">My Meals(s):</h1>
         <div className="flex flex-col">
           {allMeals.map((meal) => (
-            <div key={meal.id} className="bg-white rounded-lg shadow-md border-gray-300 border p-7 mr-1 mb-4 flex items-center justify-between">
+            <div key={meal.id} className="bg-white rounded-lg shadow-md border-gray-300 border p-5 mr-1 mb-4 flex flex-col ss:flex-row items-center justify-between">
               <img src={meal.photo} alt={meal.name} className="w-16 h-16 object-cover rounded mr-4" />
               <h2 className="text-lg font-semibold flex-grow text-center">{meal.name}</h2>
               {meal.available ? (
