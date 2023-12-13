@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import backgroundImage from '../img/meal6.jpg';
 import logo from '../img/logo2.png';
 
-function Splash() {
+const Splash = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem('access_token');
   useEffect(() => {

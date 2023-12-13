@@ -9,7 +9,7 @@ import { Link, useParams } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-function MealDetails() {
+const MealDetails = () => {
   const [mealDetails, setMealDetails] = useState({});
   const [error, setError] = useState(null); // Ajout d'un état pour stocker les erreurs
   const token = localStorage.getItem('access_token');

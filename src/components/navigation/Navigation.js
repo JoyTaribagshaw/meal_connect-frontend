@@ -12,7 +12,7 @@ import pint from '../../img/pint.svg';
 import gp from '../../img/gp.svg';
 import vi from '../../img/vi.svg';
 
-function Navigation() {
+const Navigation = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem('user_data'));
@@ -33,7 +33,7 @@ function Navigation() {
         <div className="ss:w-full flex flex-row ss:flex-col justify-between items-center">
           <img src={logo} alt="logoImg" className="w-20 mb-3 ss:w-36" />
           <button className="mx-3 text-orange w-9" type="button" onClick={() => setIsMobile(!isMobile)}>
-            {isMobile ? (<span className="block ss:hidden"><VscMenu /></span>) : (<span className="block ss:hidden"><IoMdClose /></span>) }
+            {isMobile ? (<span className="block ss:hidden"><VscMenu /></span>) : (<span className="block ss:hidden"><IoMdClose /></span>)}
           </button>
         </div>
         <ul className={`flex flex-col gap-0 ss:block ${isMobile ? 'hidden' : 'top-20'}`}>

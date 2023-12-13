@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import Navigation from './navigation/Navigation';
 import ReservationSlider from './navigation/ReservationSlide';
 
-function Reserve() {
+const Reserve = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem('user_data'));
 

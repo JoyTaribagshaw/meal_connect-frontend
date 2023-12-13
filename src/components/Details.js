@@ -3,7 +3,7 @@ import Navigation from './navigation/Navigation';
 import MealDetails from './cards/MealDetail';
 // import MealInfo from './cards/MealInfo';
 
-function Details() {
+const Details = () => {
   return (
     <div className="flex flex-col ss:flex-row">
       <Navigation />

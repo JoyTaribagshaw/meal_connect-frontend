@@ -10,7 +10,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addReservation, getReservation } from '../../features/reservation/reservationSlice';
 
-function MealInfo() {
+const MealInfo = () => {
   const { reservation } = useSelector((state) => state.reservation);
   const [isAdded, setAdded] = useState(false);
 

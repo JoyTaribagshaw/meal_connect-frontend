@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import Navigation from './navigation/Navigation';
 import MealSlider from './navigation/MealSlider';
 
-function Main() {
+const Main = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem('user_data'));
 

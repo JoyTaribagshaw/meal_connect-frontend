@@ -11,7 +11,7 @@ import Details from './components/Details';
 import AddReserve from './components/AddReserve';
 import Reserve from './components/Reserve';
 
-function App() {
+const App = () => {
   return (
     <div>
       <UserProfile />
