@@ -154,6 +154,7 @@ If you like this project just star it!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
+- Original design idea by <a target="_blank" href="https://www.behance.net/muratk">Murat Korkmaz</a>
 - [Microverse](https://www.microverse.org/)
 - [React Docs](https://reactjs.org/docs/getting-started.html)
 - [Redux Docs](https://redux.js.org/)
