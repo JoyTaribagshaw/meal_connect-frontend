@@ -1,0 +1,19 @@
+@media screen and (max-width: 600px) {
+  .nav {
+    width: 100vw;
+    height: auto;
+  }
+
+  .nav ul {
+    background-color: #72b600;
+  }
+}
+
+.active {
+  background-color: #72b600;
+  display: block;
+  width: 100%;
+  color: white;
+  margin: 0;
+  padding: 8px 0 8px 12px;
+}
