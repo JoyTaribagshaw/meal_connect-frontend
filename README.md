@@ -71,7 +71,7 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-[`git clone git@github.com:Zilola-Nazarova/workspace-reservation-front-end.git`](https://github.com/MargaretTechworld/meal_connect-frontend.git)
+[`https://github.com/MargaretTechworld/meal_connect-frontend.git`](https://github.com/MargaretTechworld/meal_connect-frontend.git)
 
 ### Install
 
@@ -112,14 +112,14 @@ Then run the app with the command
 👤 **Margaret Kojo**
 
 - GitHub: [MargaretTechworld](https://github.com/MargaretTechworld)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/margaret-kojo-musa/)
-- Twitter: [twitter](https://twitter.com/KojoMargaret)
+- LinkedIn: [Margaret Kojo](https://www.linkedin.com/in/margaret-kojo-musa/)
+- Twitter: [Margaret Kojo](https://twitter.com/KojoMargaret)
 
 
 👤 **Essohanam TAMBANA**
 
-- GitHub: [@GhostEsso](https://github.com/GhostEsso)
-- Twitter: [@TambanaEssohana](https://twitter.com/TambanaEssohana)
+- GitHub: [GhostEsso](https://github.com/GhostEsso)
+- Twitter: [TambanaEssohana](https://twitter.com/TambanaEssohana)
 - LinkedIn: [Tambana Essohanam](https://www.linkedin.com/in/essohanam-tambana)
 
 
