@@ -88,6 +88,6 @@ const MealDetails = () => {
       <Link to="/dashboard" className="flex justify-start text-xl bg-[#72b600] w-12 p-2 z-50 absolute text-center left-0 bottom-0 text-white rounded-r-full">&#x25c0;</Link>
     </div>
   );
-}
+};
 
 export default MealDetails;

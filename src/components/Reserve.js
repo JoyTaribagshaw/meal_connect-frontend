@@ -19,6 +19,6 @@ const Reserve = () => {
       <ReservationSlider />
     </div>
   );
-}
+};
 
 export default Reserve;

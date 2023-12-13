@@ -34,7 +34,7 @@ const NextArrow = (props) => {
       onClick={onClick}
     />
   );
-}
+};
 
 const PrevArrow = (props) => {
   const { className, style, onClick } = props;
@@ -58,7 +58,7 @@ const PrevArrow = (props) => {
       onClick={onClick}
     />
   );
-}
+};
 
 const ReservationSlider = () => {
   const meals = useSelector((state) => state.meals.meals);
@@ -155,6 +155,6 @@ const ReservationSlider = () => {
       </div>
     </div>
   );
-}
+};
 
 export default ReservationSlider;

@@ -11,26 +11,24 @@ import Details from './components/Details';
 import AddReserve from './components/AddReserve';
 import Reserve from './components/Reserve';
 
-const App = () => {
-  return (
-    <div>
-      <UserProfile />
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Splash />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/dashboard" element={<Main />} />
-          <Route path="/addmeal" element={<AddMealNav />} />
-          <Route path="/myReservations" element={<ReservationPage />} />
-          <Route path="/deleteMeal" element={<DeleteMeal />} />
-          <Route path="/meals/:id" element={<Details />} />
-          <Route path="/meal/:id" element={<AddReserve />} />
-          <Route path="/reservation" element={<Reserve />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
-}
+const App = () => (
+  <div>
+    <UserProfile />
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Splash />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/dashboard" element={<Main />} />
+        <Route path="/addmeal" element={<AddMealNav />} />
+        <Route path="/myReservations" element={<ReservationPage />} />
+        <Route path="/deleteMeal" element={<DeleteMeal />} />
+        <Route path="/meals/:id" element={<Details />} />
+        <Route path="/meal/:id" element={<AddReserve />} />
+        <Route path="/reservation" element={<Reserve />} />
+      </Routes>
+    </BrowserRouter>
+  </div>
+);
 
 export default App;

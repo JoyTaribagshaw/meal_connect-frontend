@@ -144,6 +144,6 @@ const MealInfo = () => {
     </div>
 
   );
-}
+};
 
 export default MealInfo;

@@ -19,6 +19,6 @@ const Main = () => {
       <MealSlider />
     </div>
   );
-}
+};
 
 export default Main;

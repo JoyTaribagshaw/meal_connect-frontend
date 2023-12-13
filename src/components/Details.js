@@ -3,13 +3,11 @@ import Navigation from './navigation/Navigation';
 import MealDetails from './cards/MealDetail';
 // import MealInfo from './cards/MealInfo';
 
-const Details = () => {
-  return (
-    <div className="flex flex-col ss:flex-row">
-      <Navigation />
-      <MealDetails />
-    </div>
-  );
-}
+const Details = () => (
+  <div className="flex flex-col ss:flex-row">
+    <Navigation />
+    <MealDetails />
+  </div>
+);
 
 export default Details;
