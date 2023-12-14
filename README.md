@@ -10,6 +10,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [💻 Kanban Board ](#-kanban-board-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -50,6 +51,18 @@ This repository contains the frontend part of the project. The backend part can 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Kanban Board <a name="kanban-board"></a>
+
+- **[Kanban Board Link](https://github.com/users/MargaretTechworld/projects/7)**
+
+- **[Kanban Board Screenshot](https://private-user-images.githubusercontent.com/60655304/286223365-b2669d8d-aabe-4cf4-8578-ccacd646e25d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDI1NDE3MDQsIm5iZiI6MTcwMjU0MTQwNCwicGF0aCI6Ii82MDY1NTMwNC8yODYyMjMzNjUtYjI2NjlkOGQtYWFiZS00Y2Y0LTg1NzgtY2NhY2Q2NDZlMjVkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMTQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjE0VDA4MTAwNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTlkZmMzNTRiNDdlYjQ4YjJkYWRiOTU2MGRiNWU4YjI2ZTllODk3NGY0MzQzZDE3NTIxNWFiNjVhNmJmMjA1YjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.6BCK-xpiUp16Mo0OYICYj1u79mdihY2TYtgG3iwuZPA)**
+
+- **Final Number of Team Members(5)**
+  - Joy Tari-bagshaw
+  - Essohanam Tambana
+  - Berhanu (Bran) Baye
+  - Bahati zirimwabagabo
+  - Margaret Kojo-Musa
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
