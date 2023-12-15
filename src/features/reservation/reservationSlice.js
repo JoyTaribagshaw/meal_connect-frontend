@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const baseUrl = 'https://meal-connet.onrender.com/';
+
 const initialState = {
   reservation: [],
   allReserve: [],
@@ -12,7 +14,7 @@ export const allReservation = createAsyncThunk('reservation/allReservation', asy
   try {
     const token = localStorage.getItem('access_token');
 
-    const response = await axios.get('http://127.0.0.1:4000/api/v1/reservations', {
+    const response = await axios.get(`${baseUrl}/api/v1/reservations`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -27,7 +29,7 @@ export const deleteReservation = createAsyncThunk('reservation/deleteReservation
   try {
     const token = localStorage.getItem('access_token');
 
-    const response = await axios.delete(`http://127.0.0.1:4000/api/v1/reservations/${id}`, {
+    const response = await axios.delete(`${baseUrl}/api/v1/reservations/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -43,7 +45,7 @@ export const addReservation = createAsyncThunk('reservation/addReservation', asy
   try {
     const token = localStorage.getItem('access_token');
 
-    const response = await axios.post(`http://127.0.0.1:4000/api/v1/meals/${id}/reservations`,
+    const response = await axios.post(`${baseUrl}/api/v1/meals/${id}/reservations`,
       reservationData,
       {
         headers: {
@@ -60,7 +62,7 @@ export const getReservation = createAsyncThunk('reservation/getReservation', asy
   try {
     const token = localStorage.getItem('access_token');
 
-    const response = await axios.get(`http://127.0.0.1:4000/api/v1/meals/${id}`, {
+    const response = await axios.get(`${baseUrl}/api/v1/meals/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const baseUrl = 'https://meal-connet.onrender.com/';
 const TOKEN_KEY = 'access_token';
 const USER_KEY = 'user_data';
 
@@ -19,7 +20,7 @@ const initialState = {
 
 export const userLoggedIn = createAsyncThunk('login/userLoggedIn', async (userData) => {
   try {
-    const response = await axios.post('http://127.0.0.1:4000/login', {
+    const response = await axios.post(`${baseUrl}/login`, {
       user: userData,
     });
 

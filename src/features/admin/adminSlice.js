@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const baseUrl = 'https://meal-connet.onrender.com/';
+
 const initialState = {
   meals: [],
   allMeals: [],
@@ -12,15 +14,13 @@ export const addMeal = createAsyncThunk('meals/addMeal', async (mealData, thunkA
   try {
     const token = localStorage.getItem('access_token');
 
-    const response = await axios.post(
-      'http://127.0.0.1:4000/api/v1/meals',
+    const response = await axios.post(`${baseUrl}/api/v1/meals`,
       mealData,
       {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      },
-    );
+      });
 
     return response.data;
   } catch (error) {
@@ -32,7 +32,7 @@ export const getMeals = createAsyncThunk('meals/getMeals', async (_, thunkAPI) =
   try {
     const token = localStorage.getItem('access_token');
 
-    const response = await axios.get('http://127.0.0.1:4000/api/v1/meals', {
+    const response = await axios.get(`${baseUrl}/api/v1/meals`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -47,7 +47,7 @@ export const getAllMeals = createAsyncThunk('meals/getAllMeals', async (_, thunk
   try {
     const token = localStorage.getItem('access_token');
 
-    const response = await axios.get('http://127.0.0.1:4000/meals_available', {
+    const response = await axios.get(`${baseUrl}/meals_available`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -62,7 +62,7 @@ export const deleteMeal = createAsyncThunk('meals/deleteMeals', async (id, thunk
   try {
     const token = localStorage.getItem('access_token');
 
-    const response = await axios.delete(`http://127.0.0.1:4000/api/v1/meals/${id}`, {
+    const response = await axios.delete(`${baseUrl}/api/v1/meals/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -81,7 +81,7 @@ export const updateAvailability = createAsyncThunk(
       const token = localStorage.getItem('access_token');
 
       const response = await axios.patch(
-        `http://127.0.0.1:4000/api/v1/meals/${id}/update_availability`,
+        `${baseUrl}/api/v1/meals/${id}/update_availability`,
         { available }, // Pass the available parameter in the request body
         {
           headers: {
