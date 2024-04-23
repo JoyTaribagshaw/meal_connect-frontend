@@ -14,7 +14,7 @@ const MealDetails = () => {
   const [error, setError] = useState(null); // Ajout d'un état pour stocker les erreurs
   const token = localStorage.getItem('access_token');
   const { id } = useParams();
-  const baseUrl = 'https://meal-connet-backend.onrender.com';
+  const baseUrl = 'https://meal-connect-backend.onrender.com';
   const url = `${baseUrl}/api/v1/meals/${id}`;
 
   useEffect(() => {
