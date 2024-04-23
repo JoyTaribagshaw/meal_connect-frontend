@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseUrl = 'https://meal-connet.onrender.com/';
+const baseUrl = 'https://meal-connet-backend.onrender.com/';
 
 const initialState = {
   meals: [],
